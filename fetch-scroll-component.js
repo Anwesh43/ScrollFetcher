@@ -1,5 +1,5 @@
 const w = window.innerWidth,h = window.innerHeight
-class InfiniteScollComponent extends HTMLElement {
+class ScrollFetcherComponent extends HTMLElement {
     constructor() {
         super()
         const shadow = this.attachShadow({mode:'open'})
@@ -20,7 +20,7 @@ class InfiniteScollComponent extends HTMLElement {
     }
     connectedCallback() {
         if(this.children.length >= 2) {
-            for(var i=0;i<this.children.length;i++) {
+            for(var i=0;i<1;i++) {
                 const child = this.children[i]
                 if(child.tagName.toLowerCase() == 'block') {
                     this.createDiv(child.innerHTML,child.getAttribute('color'),i)
@@ -29,4 +29,4 @@ class InfiniteScollComponent extends HTMLElement {
         }
     }
 }
-customElements.define('infinite-scroll',InfiniteScollComponent)
+customElements.define('scroll-fetcher',ScrollFetcherComponent)
